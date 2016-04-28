@@ -1,0 +1,4 @@
+# Linux users can copy this file into /etc/udev/rules.d/ to prevent
+# ModemManager from taking over the virtual serial port of ft232rl
+
+SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", GROUP="users", MODE="0666" SYMLINK+="canduino"
